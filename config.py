@@ -14,7 +14,7 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 # ❖ SPECIFY WHERE TO GET THE FOLLOWING CREDENTIALS 
 OWNER_USERNAME = getenv("OWNER_USERNAME", "LEGEND_MICKEY")
 BOT_USERNAME = getenv("BOT_USERNAME", "NEXIO_MUSIC_BOT")
-BOT_NAME = getenv("BOT_NAME", "˹ɱเรƭყ ꭙ ɱᴜsɪᴄ [ɳᴏ αᴅs]˼𓆩♡𓆪⁩")
+BOT_NAME = getenv("BOT_NAME", "ɱเรƭყꭙɱᴜsɪᴄ")
 ASSUSERNAME = getenv("ASSUSERNAME", "MISTY_MUSICBOT")
 EVALOP = list(map(int, getenv("EVALOP", "").split()))
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
