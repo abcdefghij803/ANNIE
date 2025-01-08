@@ -10,15 +10,15 @@ class Helper(object):
     HELP_SUPPORT = '''
 **❖ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ᴍᴇ
 
-❍ ɪғ ʏᴏᴜ ғɪɴᴅ ᴀɴʏ ᴇʀʀᴏʀ ᴏʀ ʙᴜɢ ᴏɴ ʙᴏᴛ ᴏʀ ᴡᴀɴᴛ ᴛᴏ ɢɪᴠᴇ ᴀɴʏ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ ᴛʜᴇɴ ʏᴏᴜ ᴀʀᴇ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/+n9oxbrpBBqE5NjY1)**
+❍ ɪғ ʏᴏᴜ ғɪɴᴅ ᴀɴʏ ᴇʀʀᴏʀ ᴏʀ ʙᴜɢ ᴏɴ ʙᴏᴛ ᴏʀ ᴡᴀɴᴛ ᴛᴏ ɢɪᴠᴇ ᴀɴʏ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ ᴛʜᴇɴ ʏᴏᴜ ᴀʀᴇ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/ZOYU_SUPPORT)**
 '''
 
     HELP_ABOUT = '''
-**❖ ๏ ʟᴇᴛ's ɪɴᴛʀᴏᴅᴜᴄᴇ [sᴀɴᴀᴛᴀɴɪ-ᴍᴜsɪᴄ](https://t.me/THE_IAS_VISION) ʙᴏᴛ
+**❖ ๏ ʟᴇᴛ's ɪɴᴛʀᴏᴅᴜᴄᴇ [ᴛʜᴇ-ɪɴᴄʀɪᴄɪʙʟᴇ](https://t.me/THE_INCRICIBLE) ʙᴏᴛ
 
-➻ [sᴀɴᴀᴛᴀɴɪ-ᴍᴜsɪᴄ](https://t.me/THE_IAS_VISION)  ɪs ᴏɴᴇ ᴏғ ᴛʜᴇ ʙᴇsᴛ ᴍᴜsɪᴄ | ᴠɪᴅᴇᴏ sᴛꝛᴇᴀᴍɪɴɢ ʙᴏᴛ ᴏɴ ᴛᴇʟᴇɢꝛᴧᴍ ғᴏꝛ ʏᴏᴜꝛ ɢꝛᴏᴜᴘs ᴀɴᴅ ᴄʜᴧɴɴᴇʟ
+➻ [ᴛʜᴇ-ɪɴᴄʀɪᴄɪʙʟᴇ](https://t.me/THE_INCRICIBLE)  ɪs ᴏɴᴇ ᴏғ ᴛʜᴇ ʙᴇsᴛ ᴍᴜsɪᴄ | ᴠɪᴅᴇᴏ sᴛꝛᴇᴀᴍɪɴɢ ʙᴏᴛ ᴏɴ ᴛᴇʟᴇɢꝛᴧᴍ ғᴏꝛ ʏᴏᴜꝛ ɢꝛᴏᴜᴘs ᴀɴᴅ ᴄʜᴧɴɴᴇʟ
 
-๏ ᴡʜʏ [˹ sᴀɴᴀᴛᴀɴɪ ᴍᴜsɪᴄ ˼](https://t.me/THE_IAS_VISION) ɪs ʙᴇsᴛ ?
+๏ ᴡʜʏ [˹ ᴛʜᴇ ɪɴᴄʀɪᴄɪʙʟᴇ ˼](https://t.me/THE_INCRICIBLE) ɪs ʙᴇsᴛ ?
 
 ➻ ʙᴇsᴛ sᴏᴜɴᴅ ǫᴜᴀʟɪᴛʏ
 ➻ ᴍᴜsɪᴄ ʙᴏᴛ ғᴇᴀᴛᴜʀᴇs
@@ -32,7 +32,7 @@ class Helper(object):
 
 ᴀʟʟ ᴛʜᴇ ғᴇᴀᴛᴜʀᴇs ᴀʀᴇ ᴡᴏʀᴋɪɴɢ ғɪɴᴇ
 
-❖ JOIN [CHANNEL](https://t.me/THE_IAS_VISION) |×| [GROUP](https://t.me/+n9oxbrpBBqE5NjY1)**
+❖ JOIN [CHANNEL](https://t.me/THE_INCRICIBLE) |×| [GROUP](https://t.me/ZOYU_SUPPORT)**
 '''
 
 
@@ -52,9 +52,9 @@ class Helper(object):
 **❖ ʜᴇʏ, ɪ ᴀᴍ ɢʟᴀᴅ ᴛᴏ ᴋɴᴏᴡ ʏᴏᴜ ᴀʀᴇ ɪɴᴛᴇʀᴇsᴛᴇᴅ ɪɴ ᴅᴏɴᴀᴛɪɴɢ ᴜs ᴛʜᴀᴛ ᴍᴇᴀɴ ᴀ ʟᴏᴛ :)
 
 ᴡᴇ ᴘʀᴏᴠɪᴅᴇ 24×7 ᴍᴜsɪᴄ sᴇʀᴠɪᴄᴇ sᴏ ᴡᴇ ᴀʟsᴏ ɴᴇᴇᴅ sᴏᴍᴇ ʜᴇʟᴘ ғᴏʀ ɪᴛ, ᴅᴏɴᴀᴛᴇ ɴᴏᴡ ᴠɪᴀ :-
-• ᴜᴘɪ ɪᴅ » **`sachinsanatani@ybl`
-**• ǫʀ ᴄᴏᴅᴇ » [ᴛᴀᴘ ᴛᴏ sᴇᴇ ǫʀ ᴄᴏᴅᴇ](https://files.catbox.moe/vbnp3q.jpg) **
-**• ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴅᴏɴᴀᴛᴇ ʙʏ ᴄᴏɴᴛᴀᴄᴛɪɴɢ [ᴅᴇᴠᴇʟᴏᴘᴇʀ](https://t.me/v_vip_owner) 🚩
+• ᴜᴘɪ ɪᴅ » **`yourgodfatherxd@okaxis`
+**• ǫʀ ᴄᴏᴅᴇ » [ᴛᴀᴘ ᴛᴏ sᴇᴇ ǫʀ ᴄᴏᴅᴇ](https://t.me/The_Incricible/837) **
+**• ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴅᴏɴᴀᴛᴇ ʙʏ ᴄᴏɴᴛᴀᴄᴛɪɴɢ [ᴅᴇᴠᴇʟᴏᴘᴇʀ](https://t.me/Legend_mickey) 🚩
 
 ʏᴏᴜʀ sᴍᴀʟʟ ᴀᴍᴏᴜɴᴛ ᴄᴀɴ ʜᴇʟᴘ ᴜs ᴀɴᴅ sᴀɴᴀᴛᴀɴɪ ᴛᴏ ɢʀᴏᴡ ᴍᴏʀᴇ**
 '''
