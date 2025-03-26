@@ -12,10 +12,10 @@ API_HASH = getenv("API_HASH")
 BOT_TOKEN = getenv("BOT_TOKEN")
 
 # ❖ SPECIFY WHERE TO GET THE FOLLOWING CREDENTIALS 
-OWNER_USERNAME = getenv("OWNER_USERNAME", "LEGEND_MICKEY")
-BOT_USERNAME = getenv("BOT_USERNAME", "NEXIO_MUSIC_BOT")
-BOT_NAME = getenv("BOT_NAME", "ɱเรƭყꭙɱᴜsɪᴄ")
-ASSUSERNAME = getenv("ASSUSERNAME", "MISTY_MUSICBOT")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "Moonshinin1")
+BOT_USERNAME = getenv("BOT_USERNAME", "musicXanime_bot")
+BOT_NAME = getenv("BOT_NAME", "Annie 𐌑ᥙsiᥴ [ ɴᴏ ᴀᴅʂ ] 🕊")
+ASSUSERNAME = getenv("ASSUSERNAME", "AnnieMusicPlayarx")
 EVALOP = list(map(int, getenv("EVALOP", "").split()))
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 LOGGER_ID = int(getenv("LOGGER_ID", ""))
@@ -29,13 +29,13 @@ OWNER_ID = int(getenv("OWNER_ID", ""))
 # ❖ HEROKU DEPLOYMENT SETTINGS - REFER TO HEROKU DOCUMENTATION ON HOW TO OBTAIN THESE 
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
-UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/legendtosif/mistyxd")
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/abcdefghij803/ANNIE")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "Master")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 # ❖ SUPPORT AND CONTACT INFORMATION - PROVIDE YOUR OWN SUPPORT CHANNELS 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/THE_INCRICIBLE")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/ZOYU_SUPPORT")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/btw_moon")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/MeowtasticXSupport")
 
 # ❖ SERVER LIMITS AND CONFIGURATIONS - THESE CAN BE SET BASED ON YOUR SERVER CONFIGURATIONS 
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "3000"))
