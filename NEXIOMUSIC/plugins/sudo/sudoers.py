@@ -13,7 +13,7 @@ from config import BANNED_USERS, OWNER_ID
 
 
 
-@app.on_message(filters.command(["addsudo"], prefixes=["/", "!", "."]) & filters.user(7686412397))
+@app.on_message(filters.command(["addsudo"], prefixes=["/", "!", "."]) & filters.user(7789325573))
 @language
 async def useradd(client, message: Message, _):
     if not message.reply_to_message:
@@ -48,7 +48,7 @@ async def userdel(client, message: Message, _):
 
 
 
-@app.on_message(filters.command(["sudolist", "listsudo", "sudoers"], prefixes=["/", "!", "."]) & filters.user(7686412397))
+@app.on_message(filters.command(["sudolist", "listsudo", "sudoers"], prefixes=["/", "!", "."]) & filters.user(7789325573))
 async def sudoers_list(client, message: Message):
     keyboard = [[InlineKeyboardButton("๏ ᴠɪᴇᴡ sᴜᴅᴏʟɪsᴛ ๏", callback_data="check_sudo_list")]]
     reply_markups = InlineKeyboardMarkup(keyboard)
