@@ -16,7 +16,7 @@ OWNER_USERNAME = getenv("OWNER_USERNAME", "Moonshinin1")
 BOT_USERNAME = getenv("BOT_USERNAME", "musicXanime_bot")
 BOT_NAME = getenv("BOT_NAME", "Annie 𐌑ᥙsiᥴ [ ɴᴏ ᴀᴅʂ ] 🕊")
 ASSUSERNAME = getenv("ASSUSERNAME", "AnnieMusicPlayarx")
-EVALOP = list(map(int, getenv("EVALOP", "7789325573").split()))
+EVALOP = list(map(int, getenv("EVALOP", "").split()))
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://moonshining1:moon1234#$@cluster0.ooky2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 LOGGER_ID = int(getenv("LOGGER_ID", "-1002024032988"))
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
@@ -24,7 +24,7 @@ DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 # ❖ EXTERNAL APIs - GET THESE FROM THEIR RESPECTIVE PROVIDERS 
 GPT_API = getenv("GPT_API", "")
 PLAYHT_API = getenv("PLAYHT_API", "")
-OWNER_ID = int(getenv("OWNER_ID", ""))
+OWNER_ID = int(getenv("OWNER_ID", "7789325573"))
 
 # ❖ HEROKU DEPLOYMENT SETTINGS - REFER TO HEROKU DOCUMENTATION ON HOW TO OBTAIN THESE 
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
