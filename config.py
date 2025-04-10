@@ -7,9 +7,9 @@ from pyrogram import filters
 load_dotenv()
 
 # ❖ TELEGRAM API CREDENTIALS - GET THESE FROM THE TELEGRAM API WEBSITE 
-API_ID = int(getenv("API_ID", "25614292"))
-API_HASH = getenv("API_HASH", "59ee8005ce6b056fa639d956f028eeeb")
-BOT_TOKEN = getenv("BOT_TOKEN", "7190367973:AAHGAYwfLJ-5TMj3mj0WAHv70esGCfpSMhk")
+API_ID = int(getenv("API_ID", ""))
+API_HASH = getenv("API_HASH", "")
+BOT_TOKEN = getenv("BOT_TOKEN", "")
 
 # ❖ SPECIFY WHERE TO GET THE FOLLOWING CREDENTIALS 
 OWNER_USERNAME = getenv("OWNER_USERNAME", "Moonshinin1")
@@ -17,8 +17,8 @@ BOT_USERNAME = getenv("BOT_USERNAME", "musicXanime_bot")
 BOT_NAME = getenv("BOT_NAME", "Annie 𐌑ᥙsiᥴ [ ɴᴏ ᴀᴅʂ ] 🕊")
 ASSUSERNAME = getenv("ASSUSERNAME", "AnnieMusicPlayarx")
 EVALOP = list(map(int, getenv("EVALOP", "").split()))
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://moonshining1:moon1234#$@cluster0.ooky2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-LOGGER_ID = int(getenv("LOGGER_ID", "-1002024032988"))
+MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+LOGGER_ID = int(getenv("LOGGER_ID", ""))
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 
 # ❖ EXTERNAL APIs - GET THESE FROM THEIR RESPECTIVE PROVIDERS 
