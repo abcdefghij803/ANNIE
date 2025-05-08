@@ -23,7 +23,7 @@ def private_panel(_):
         ],
         [
             InlineKeyboardButton(text=_["S_B_14"], callback_data="ABOUT_CP"),
-            InlineKeyboardButton(text=_["S_B_2"], callback_data="SUPPORT_CP"),
+            InlineKeyboardButton(text=_["S_B_2"], url=f"https://t.me/Btw_moon"),
         ],
         [
             InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID),
