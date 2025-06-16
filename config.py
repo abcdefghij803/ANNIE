@@ -12,7 +12,7 @@ API_HASH = getenv("API_HASH", "")
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 
 # ❖ SPECIFY WHERE TO GET THE FOLLOWING CREDENTIALS 
-OWNER_USERNAME = getenv("OWNER_USERNAME", "Moonshinin1")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "moon_m_5")
 BOT_USERNAME = getenv("BOT_USERNAME", "musicXanime_bot")
 BOT_NAME = getenv("BOT_NAME", "Annie 𐌑ᥙsiᥴ [ ɴᴏ ᴀᴅʂ ] 🕊")
 ASSUSERNAME = getenv("ASSUSERNAME", "AnnieMusicPlayarx")
@@ -35,7 +35,7 @@ GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 # ❖ SUPPORT AND CONTACT INFORMATION - PROVIDE YOUR OWN SUPPORT CHANNELS 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/btw_moon")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/MeowtasticXSupport")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+zOo21P9qDW4wZjk1")
 
 # ❖ SERVER LIMITS AND CONFIGURATIONS - THESE CAN BE SET BASED ON YOUR SERVER CONFIGURATIONS 
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "3000"))
