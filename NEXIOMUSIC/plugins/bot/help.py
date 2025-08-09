@@ -229,7 +229,7 @@ async def mb_plugin_button(client, CallbackQuery):
 
 @app.on_callback_query(filters.regex("TOOL_CP") & ~BANNED_USERS)
 async def helper_cb(client, CallbackQuery):
-    await CallbackQuery.edit_message_text(Helper.HELP_B, reply_markup=InlineKeyboardMarkup(BUTTONS.BBUTTON))
+    await CallbackQuery.edit_message_text(Helper.HELP_TOOL, reply_markup=InlineKeyboardMarkup(BUTTONS.ZBUTTON))
 
 
 @app.on_callback_query(filters.regex('TOOL_BACK'))      
@@ -491,44 +491,3 @@ async def mb_plugin_button(client, CallbackQuery):
 #----------------------------------------------------------------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@app.on_callback_query(filters.regex("TOOL_CP") & ~BANNED_USERS)
-async def helper_cb(client, CallbackQuery):
-    await CallbackQuery.edit_message_text(Helper.HELP_TOOL, reply_markup=InlineKeyboardMarkup(BUTTONS.ZBUTTON))
-
-        
-@app.on_callback_query(filters.regex('TOOL_BACK'))      
-async def mb_plugin_button(client, CallbackQuery):
-    callback_data = CallbackQuery.data.strip()
-    cb = callback_data.split(None, 1)[1]
-    keyboard = InlineKeyboardMarkup(
-    [
-    [
-    InlineKeyboardButton("Ê™á´€á´„á´‹", callback_data=f"TOOL_CP")
-    ]
-    ]
-    )
-    if cb == "TOOL":
-        await CallbackQuery.edit_message_text(f"`something errors`",reply_markup=keyboard,parse_mode=enums.ParseMode.MARKDOWN)
-    else:
-        await CallbackQuery.edit_message_text(getattr(Helper, cb), reply_markup=keyboard)
-        
-              
-              
-              
