@@ -15,10 +15,10 @@ class BUTTONS(object):
         ]
     ]
 
-    SBUTTTON = [
+    ZBUTTON = [
         [
-            InlineKeyboardButton("ᴄʜᴧᴛ ɢᴄ", url="https://t.me/+zOo21P9qDW4wZjk1"),
-            InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="https://t.me/btw_moon"),
+            InlineKeyboardButton("Kitty", url="https://t.me/+zOo21P9qDW4wZjk1"),
+            InlineKeyboardButton("Annie", url="https://t.me/btw_moon"),
         ],
         [
             InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
