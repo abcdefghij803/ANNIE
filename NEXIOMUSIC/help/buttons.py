@@ -1,8 +1,9 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from pyrogram import Client, filters, enums 
+from pyrogram import Client, filters, enums
 
 import config
 from NEXIOMUSIC import app
+
 
 class BUTTONS(object):
     MtBUTTON = [
@@ -11,22 +12,19 @@ class BUTTONS(object):
         ],
         [
             InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
-            
         ]
-        ]
-    
+    ]
+
     SBUTTTON = [
- 
         [
             InlineKeyboardButton("ᴄʜᴧᴛ ɢᴄ", url="https://t.me/+zOo21P9qDW4wZjk1"),
             InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="https://t.me/btw_moon"),
         ],
         [
             InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
-            
         ]
-        ]
-    
+    ]
+
     ABUTTOhN = [
         [
             InlineKeyboardButton("ᴧʙσυᴛ", url="https://t.me/btw_moon/557"),
@@ -38,11 +36,10 @@ class BUTTONS(object):
         ],
         [
             InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
-            
         ]
-        ]
+    ]
 
-PBUTTON = [
+    PBUTTON = [
         [
             InlineKeyboardButton("˹ 🇲σ᭡፝֟ɳ🌙 ˼", url="https://t.me/about_ur_moonshining/5"),
             InlineKeyboardButton("˹ σᴡηєꝛ's ᴄʟᴧη 🎄 ˼", url="https://t.me/Grandxmasti"),
@@ -53,18 +50,16 @@ PBUTTON = [
         ],
         [
             InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
-            
         ]
-        ]
-    
+    ]
+
     ABUTTON = [
         [
             InlineKeyboardButton("• ᴧηηɪє ᴠ2.0 •", callback_data="GUIDEBOT_CP"),
-            
-        ],        
+        ],
         [
             InlineKeyboardButton("˹ sυᴘᴘσʀᴛ ˼", url="https://t.me/grandxmasti"),
-            InlineKeyboardButton("˹ σᴡηєꝛ ˼",  callback_data="PROMOTION_CP"),
+            InlineKeyboardButton("˹ σᴡηєꝛ ˼", callback_data="PROMOTION_CP"),
         ],
         [
             InlineKeyboardButton("˹ ʙᴧsɪᴄ ɢυɪᴅє  ˼", callback_data="MAIN_BACK HELP_ABOUT"),
@@ -72,10 +67,9 @@ PBUTTON = [
         ],
         [
             InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
-            
         ]
-        ]
-    
+    ]
+
     SBUTTON = [
         [
             InlineKeyboardButton("˹ ϻυsɪᴄ ˼", callback_data="settings_back_helper"),
@@ -87,14 +81,13 @@ PBUTTON = [
         ],
         [
             InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
-            
         ]
-        ]
+    ]
 
     GBUTTON = [
         [
             InlineKeyboardButton("˹ sυᴘᴘσʀᴛ ˼", url="https://t.me/Grandxmasti"),
-            InlineKeyboardButton("˹ σᴡηєꝛ ˼",  callback_data="PROMOTION_CP"),
+            InlineKeyboardButton("˹ σᴡηєꝛ ˼", callback_data="PROMOTION_CP"),
         ],
         [
             InlineKeyboardButton("˹ ɢᴧʟᴧxʏ ˼", callback_data="GALAXYBOT_CP"),
@@ -102,21 +95,19 @@ PBUTTON = [
         ],
         [
             InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
-            
         ]
-        ]
+    ]
 
     LBUTTON = [
         [
             InlineKeyboardButton("˹ sʜʏᴧꝛɪ ˼", url="https://t.me/shayariAlfaazonKaAaina"),
-            InlineKeyboardButton("˹ sυᴘᴘσʀᴛ ˼",  url="https://t.me/grandxmasti"),
+            InlineKeyboardButton("˹ sυᴘᴘσʀᴛ ˼", url="https://t.me/grandxmasti"),
         ],
         [
-            InlineKeyboardButton("˹ σᴡηєꝛ ˼",  callback_data="PROMOTION_CP"),
+            InlineKeyboardButton("˹ σᴡηєꝛ ˼", callback_data="PROMOTION_CP"),
             InlineKeyboardButton("˹ sσυꝛᴄє ˼", url="https://t.me/Kittyxupdates"),
         ],
         [
             InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
-            
         ]
-        ]
+    ]
