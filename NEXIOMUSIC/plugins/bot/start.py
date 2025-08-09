@@ -37,7 +37,7 @@ NEXIO_VD = [
     "https://telegra.ph/file/4677338c6be82a5b56078.mp4",
     "https://telegra.ph/file/327e1f0db4be4c0796746.mp4",
     "https://telegra.ph/file/4677338c6be82a5b56078.mp4",
-    "https://telegra.ph/file/327e1f0db4be4c0796746.mp4"--
+    "https://telegra.ph/file/327e1f0db4be4c0796746.mp4",
 ]
 
 HIMANSHI_PH = [
