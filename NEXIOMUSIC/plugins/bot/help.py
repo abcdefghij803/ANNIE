@@ -110,7 +110,7 @@ async def helper_cb(client, CallbackQuery, _):
 
 @app.on_callback_query(filters.regex("MAIN_CP") & ~BANNED_USERS)
 async def helper_cb(client, CallbackQuery):
-    await CallbackQuery.edit_message_text(Helper.HELP_MAIN, reply_markup=InlineKeyboardMarkup(BUTTONS.MBUTTON))
+    await CallbackQuery.edit_message_text(Helper.HELP_MAIN, reply_markup=InlineKeyboardMarkup(BUTTONS.SBUTTON))
     
         
 @app.on_callback_query(filters.regex('MAIN_BACK'))      
