@@ -16,18 +16,16 @@ def start_panel(_):
 def private_panel(_):
     buttons = [
         [
-            InlineKeyboardButton(text=_["S_B_3"], url=f"https://t.me/{app.username}?startgroup=true",)
+            InlineKeyboardButton(text=_["S_B_3"],url=f"https://t.me/{app.username}?startgroup=true",)
         ],
         [
-            InlineKeyboardButton(text=_["S_B_4"], callback_data="settings_back_helper"),
+            InlineKeyboardButton(text=_["S_B_10"], callback_data="ALLBOT_CP"),
+            InlineKeyboardButton(text=_["S_B_4"], callback_data="MAIN_CP"),
         ],
         [
-            InlineKeyboardButton(text=_["S_B_14"], callback_data="ABOUT_CP"),
-            InlineKeyboardButton(text=_["S_B_2"], url=f"https://t.me/Btw_moon"),
+           InlineKeyboardButton(text=_["S_B_5"], callback_data="PROMOTION_CP"),
+            InlineKeyboardButton(text=_["S_B_6"], url=f"https://t.me/shayariAlfaazonKaAaina"),
         ],
-        [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID),
-        ],
-        ]
-    
+
+    ]
     return buttons
