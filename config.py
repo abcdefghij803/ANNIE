@@ -37,9 +37,9 @@ GIT_TOKEN = getenv("GIT_TOKEN", None)
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/btw_moon")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+zOo21P9qDW4wZjk1")
 
-API_URL = getenv("API_URL", 'https://MOON_M_5.northflank.app/api') #youtube song url
-VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://MOON_M_5.northflank.app/api')
-API_KEY = getenv("API_KEY", '123Moonshining098') # youtube song api key
+API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
+VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://api.thequickearn.xyz')
+API_KEY = getenv("API_KEY", '30DxNexGenBotsadd047') # youtube song api key
 
 # ❖ SERVER LIMITS AND CONFIGURATIONS - THESE CAN BE SET BASED ON YOUR SERVER CONFIGURATIONS 
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "3000"))
