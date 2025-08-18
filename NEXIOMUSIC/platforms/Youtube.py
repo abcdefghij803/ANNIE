@@ -468,3 +468,37 @@ class YouTubeAPI:
             direct = True
             downloaded_file = await download_song(link)
         return downloaded_file, direct
+
+
+# =====================================
+# YouTubeMusic Integratio                           
+# =====================================
+from YouTubeMusic.Search import Search as YTMusicSearch
+
+async def search_music(query: str, limit: int = 1):
+    """
+    Search YouTube Music using DuckDuckGo scraping.
+    Returns first result metadata & URL.
+    """
+    results = await YTMusicSearch(query, limit=limit)
+    if not results or not results.get("main_results"):
+        return None
+
+    item = results["main_results"][0]
+    return {
+        "title": item.get("title"),
+        "artist": item.get("artist_name"),
+        "channel": item.get("channel_name"),
+        "duration": item.get("duration"),
+        "views": item.get("views"),
+        "thumbnail": item.get("thumbnail"),
+        "url": item.get("url"),
+    }
+
+
+class YouTubeAPI(YouTubeAPI):  # extend existing class
+    async def music_search(self, query: str, limit: int = 1):
+        """
+        Search YouTube Music (DuckDuckGo based).
+        """
+        return await search_music(query, limit=limit)
