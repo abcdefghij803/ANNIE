@@ -471,9 +471,10 @@ class YouTubeAPI:
 
 
 # =====================================
-# YouTubeMusic Integratio                           
+# YouTubeMusic Integration
 # =====================================
 from YouTubeMusic.Search import Search as YTMusicSearch
+from .Youtube import YouTubeAPI as BaseYouTubeAPI   # 👈 existing YouTubeAPI extend
 
 async def search_music(query: str, limit: int = 1):
     """
@@ -496,7 +497,7 @@ async def search_music(query: str, limit: int = 1):
     }
 
 
-class YouTubeAPI(YouTubeAPI):  # extend existing class
+class YouTubeAPI(BaseYouTubeAPI):
     async def music_search(self, query: str, limit: int = 1):
         """
         Search YouTube Music (DuckDuckGo based).
