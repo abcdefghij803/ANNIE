@@ -1,7 +1,10 @@
 import asyncio
 import importlib
+import os
+from flask import Flask, request, jsonify
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
+import yt_dlp
 
 import config
 from NEXIOMUSIC import LOGGER, app, userbot
@@ -11,47 +14,37 @@ from NEXIOMUSIC.plugins import ALL_MODULES
 from NEXIOMUSIC.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 
-# 🔹 Flask + yt_dlp
-from flask import Flask, request, jsonify
-import yt_dlp
-import os
-import threading
 
-app_flask = Flask(__name__)
-DOWNLOADS = "downloads"
-os.makedirs(DOWNLOADS, exist_ok=True)
+# ------------------- Flask API -------------------
+flask_app = Flask(__name__)
 
-ydl_opts = {
-    "format": "bestaudio/best",
-    "outtmpl": os.path.join(DOWNLOADS, "%(id)s.%(ext)s"),
-    "quiet": True,
-    "no_warnings": True,
-    "geo_bypass": True,
-    "nocheckcertificate": True,
-}
+DOWNLOAD_DIR = "downloads"
+os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
-@app_flask.route("/download", methods=["GET"])
-def download_audio():
+
+@flask_app.route("/download", methods=["GET"])
+def download():
     url = request.args.get("url")
     if not url:
-        return jsonify({"error": "Missing ?url= param"}), 400
+        return jsonify({"error": "URL required"}), 400
+
     try:
+        ydl_opts = {
+            "format": "bestaudio/best",
+            "outtmpl": f"{DOWNLOAD_DIR}/%(id)s.%(ext)s",
+            "quiet": True,
+            "no_warnings": True,
+        }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(url, download=True)
-            filename = ydl.prepare_filename(info)
-        return jsonify({
-            "status": "ok",
-            "title": info.get("title"),
-            "file": os.path.abspath(filename)
-        })
+            file_path = ydl.prepare_filename(info)
+
+        return jsonify({"path": os.path.abspath(file_path)})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        return jsonify({"error": str(e)}), 500
 
 
-def run_flask():
-    app_flask.run(host="0.0.0.0", port=5000, debug=False)
-
-
+# ------------------- Bot Init -------------------
 async def init():
     if (
         not config.STRING1
@@ -60,16 +53,11 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER(__name__).error(
-            "❖ ASSISTANT  SESSION NOT FILLED, PLEASE FILL A PYROGRAM SESSION 💜"
-        )
+        LOGGER(__name__).error("❖ ASSISTANT SESSION NOT FILLED ❖")
         exit()
 
-    # Flask ko alag thread me run karenge
-    threading.Thread(target=run_flask, daemon=True).start()
-    LOGGER("NEXIOMUSIC").info("Flask API started on /download ✅")
-
     await sudo()
+
     try:
         users = await get_gbanned()
         for user_id in users:
@@ -81,29 +69,37 @@ async def init():
         pass
 
     await app.start()
+
     for all_module in ALL_MODULES:
         importlib.import_module("NEXIOMUSIC.plugins" + all_module)
-    LOGGER("NEXIOMUSIC.plugins").info("❖ NEXIO MODULES LOADED 🤎")
+
+    LOGGER("NEXIOMUSIC.plugins").info("❖ MODULES LOADED")
+
     await userbot.start()
     await SACHIN.start()
+
     try:
         await SACHIN.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
     except NoActiveGroupCall:
-        LOGGER("NEXIOMUSIC").error(
-            "❖ PLEASE TURN ON THE VOICE CHAT OF OUR LOGGER GROUP|CHANNEL NEXIO MUSIC STOPPED 🧡"
-        )
+        LOGGER("NEXIOMUSIC").error("❖ START A VC IN LOGGER GROUP ❖")
         exit()
     except:
         pass
+
     await SACHIN.decorators()
-    LOGGER("NEXIOMUSIC").info(
-        "❖ Kishuu Music Bot Started Successfully 💜 (With Flask API)"
-    )
+    LOGGER("NEXIOMUSIC").info("❖ BOT STARTED SUCCESSFULLY ❖")
+
     await idle()
+
     await app.stop()
     await userbot.stop()
-    LOGGER("NEXIOMUSIC").info("❖ STOPPING NEXIO MUSIC BOT 💛")
+    LOGGER("NEXIOMUSIC").info("❖ BOT STOPPED ❖")
 
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(init())
+    # Run Flask server in background
+    loop = asyncio.get_event_loop()
+    loop.create_task(loop.run_in_executor(None, flask_app.run, "0.0.0.0", 5000))
+
+    # Run Music Bot
+    loop.run_until_complete(init())
