@@ -47,3 +47,6 @@ Flask
 youtube-search
 youtube-search-python
 YouTubeMusic
+pyrogram
+
+
