@@ -43,6 +43,7 @@ tgcrypto
 unidecode
 wget
 yt-dlp
+youtube-search-python
 Flask
 
 
