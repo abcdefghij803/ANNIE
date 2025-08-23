@@ -1,6 +1,5 @@
 import asyncio
 import importlib
-
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
@@ -12,6 +11,46 @@ from NEXIOMUSIC.plugins import ALL_MODULES
 from NEXIOMUSIC.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 
+# 🔹 Flask + yt_dlp
+from flask import Flask, request, jsonify
+import yt_dlp
+import os
+import threading
+
+app_flask = Flask(__name__)
+DOWNLOADS = "downloads"
+os.makedirs(DOWNLOADS, exist_ok=True)
+
+ydl_opts = {
+    "format": "bestaudio/best",
+    "outtmpl": os.path.join(DOWNLOADS, "%(id)s.%(ext)s"),
+    "quiet": True,
+    "no_warnings": True,
+    "geo_bypass": True,
+    "nocheckcertificate": True,
+}
+
+@app_flask.route("/download", methods=["GET"])
+def download_audio():
+    url = request.args.get("url")
+    if not url:
+        return jsonify({"error": "Missing ?url= param"}), 400
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(url, download=True)
+            filename = ydl.prepare_filename(info)
+        return jsonify({
+            "status": "ok",
+            "title": info.get("title"),
+            "file": os.path.abspath(filename)
+        })
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
+def run_flask():
+    app_flask.run(host="0.0.0.0", port=5000, debug=False)
+
 
 async def init():
     if (
@@ -21,8 +60,15 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER(__name__).error("❖ ASSISTANT  SESSION NOT FILLED, PLEASE FILL A PYROGRAM SESSION 💜")
+        LOGGER(__name__).error(
+            "❖ ASSISTANT  SESSION NOT FILLED, PLEASE FILL A PYROGRAM SESSION 💜"
+        )
         exit()
+
+    # Flask ko alag thread me run karenge
+    threading.Thread(target=run_flask, daemon=True).start()
+    LOGGER("NEXIOMUSIC").info("Flask API started on /download ✅")
+
     await sudo()
     try:
         users = await get_gbanned()
@@ -33,6 +79,7 @@ async def init():
             BANNED_USERS.add(user_id)
     except:
         pass
+
     await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("NEXIOMUSIC.plugins" + all_module)
@@ -43,19 +90,19 @@ async def init():
         await SACHIN.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
     except NoActiveGroupCall:
         LOGGER("NEXIOMUSIC").error(
-            "❖ PLEASE TRUN ON THE VOICE CHAT OF OUR LOGGER GROUP|CHANNEL NEXIO MUAIC STOPPED 🧡"
+            "❖ PLEASE TURN ON THE VOICE CHAT OF OUR LOGGER GROUP|CHANNEL NEXIO MUSIC STOPPED 🧡"
         )
         exit()
     except:
         pass
     await SACHIN.decorators()
     LOGGER("NEXIOMUSIC").info(
-        "\x4b\x69\x73\x68\x75\x20\x4d\x75\x73\x69\x63\x20\x42\x6f\x74\x20\x53\x74\x61\x72\x74\x65\x64\x20\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x6c\x79\x2e"
+        "❖ Kishuu Music Bot Started Successfully 💜 (With Flask API)"
     )
     await idle()
     await app.stop()
     await userbot.stop()
-    LOGGER("NEXIOMUSIC").info("❖ STOPING NEXIO MUAIC BOT 💛")
+    LOGGER("NEXIOMUSIC").info("❖ STOPPING NEXIO MUSIC BOT 💛")
 
 
 if __name__ == "__main__":
