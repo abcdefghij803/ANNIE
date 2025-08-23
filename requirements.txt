@@ -44,9 +44,6 @@ unidecode
 wget
 yt-dlp
 Flask
-youtube-search
-youtube-search-python
-YouTubeMusic
-pyrogram
+
 
 
