@@ -184,7 +184,7 @@ async def welcome(client, message: Message):
 
                 out = start_panel(_)
                 await message.reply_photo(
-                    random.choice(HIMANSHI),
+                    random.choice(HIMANSHI_PH),
                     caption=_["start_3"].format(
                         message.from_user.mention,
                         app.mention,
