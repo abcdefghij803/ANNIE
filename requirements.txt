@@ -44,6 +44,7 @@ unidecode
 wget
 yt-dlp
 youtube-search-python
+youtube-search==2.1.2
 Flask
 
 
