@@ -2,12 +2,9 @@ import asyncio
 import os
 import re
 import json
-import glob
 import random
-import logging
 import aiohttp
 import config
-import time
 import requests
 import yt_dlp
 from pathlib import Path
@@ -111,6 +108,118 @@ async def download_file(link: str, video: bool = False) -> str | None:
                             if not chunk:
                                 break
                             f.write(chunk)
+
+            temp_path.rename(filepath)
+            print(f"✅ Download completed: {filepath}")
+            return str(filepath)
+
+        except Exception as e:
+            print(f"⚠️ Download attempt {attempt} failed: {e}")
+            if temp_path.exists():
+                temp_path.unlink(missing_ok=True)
+
+            if attempt < 3:
+                await asyncio.sleep(1)
+            else:
+                print("❌ All download attempts failed.")
+                return None
+
+
+def cookie_txt_file():
+    cookie_dir = f"{os.getcwd()}/cookies"
+    if not os.path.exists(cookie_dir):
+        return None
+    cookies_files = [f for f in os.listdir(cookie_dir) if f.endswith(".txt")]
+    if not cookies_files:
+        return None
+    cookie_file = os.path.join(cookie_dir, random.choice(cookies_files))
+    return cookie_file
+
+
+async def shell_cmd(cmd):
+    proc = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    out, errorz = await proc.communicate()
+    if errorz:
+        if "unavailable videos are hidden" in (errorz.decode("utf-8")).lower():
+            return out.decode("utf-8")
+        else:
+            return errorz.decode("utf-8")
+    return out.decode("utf-8")
+
+
+class YouTubeAPI:
+    def __init__(self):
+        self.base = "https://www.youtube.com/watch?v="
+        self.regex = r"(?:youtube\.com|youtu\.be)"
+        self.status = "https://www.youtube.com/oembed?url="
+        self.listbase = "https://youtube.com/playlist?list="
+        self.reg = re.compile(r"\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])")
+
+    # ... (baaki methods same as tumne bheje, maine touch nahi kiye) ...
+
+    async def download(
+        self,
+        link: str,
+        mystic,
+        video: Union[bool, str] = None,
+        videoid: Union[bool, str] = None,
+        songaudio: Union[bool, str] = None,
+        songvideo: Union[bool, str] = None,
+        format_id: Union[bool, str] = None,
+        title: Union[bool, str] = None,
+    ) -> str:
+        if videoid:
+            link = self.base + link
+
+        if songvideo:
+            fpath = await download_file(link)
+            return fpath
+
+        elif songaudio:
+            fpath = await download_file(link)
+            return fpath
+
+        elif video:
+            try:
+                downloaded_file = await download_file(link, video=True)
+                if downloaded_file:
+                    direct = True
+                    return downloaded_file, direct
+            except Exception as e:
+                print(f"Video API failed: {e}")
+
+            cookie_file = cookie_txt_file()
+            if not cookie_file:
+                print("No cookies found. Cannot download video.")
+                return None, None
+
+            if await is_on_off(1):
+                direct = True
+                downloaded_file = await download_file(link)
+                return downloaded_file, direct
+            else:
+                proc = await asyncio.create_subprocess_exec(
+                    "yt-dlp",
+                    "--cookies", cookie_file,
+                    "-g",
+                    "-f",
+                    "best[height<=?720][width<=?1280]",
+                    f"{link}",
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE,
+                )
+                stdout, stderr = await proc.communicate()
+                if stdout:
+                    downloaded_file = stdout.decode().split("\n")[0]
+                    direct = False
+                    return downloaded_file, direct
+                else:
+                    print(stderr.decode())
+                    return None, None                            f.write(chunk)
 
             temp_path.rename(filepath)
             print(f"✅ Download completed: {filepath}")
