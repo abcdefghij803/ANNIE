@@ -35,11 +35,11 @@ GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 # ❖ SUPPORT AND CONTACT INFORMATION - PROVIDE YOUR OWN SUPPORT CHANNELS 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/btw_moon")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+zOo21P9qDW4wZjk1")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/kittyxupdates")
 
-API_URL = getenv("API_URL", 'https://deadlinetech.site') #youtube song url
-VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://deadlinetech.site')
-API_KEY = getenv("API_KEY", 'SsqnS28006KTUobOSYWw') # youtube song api key
+API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
+VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://api.thequickearn.xyz')
+API_KEY = getenv("API_KEY", '30DxNexGenBots5a2df3') # youtube song api key
 
 # ❖ SERVER LIMITS AND CONFIGURATIONS - THESE CAN BE SET BASED ON YOUR SERVER CONFIGURATIONS 
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "3000"))
