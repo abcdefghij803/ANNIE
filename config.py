@@ -39,7 +39,7 @@ SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/kittyxupdates")
 
 API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
 VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://api.thequickearn.xyz')
-API_KEY = getenv("API_KEY", '30DxNexGenBots5a2df3') # youtube song api key
+API_KEY = getenv("API_KEY", '30DxNexGenBotse6bcfa') # youtube song api key
 
 # ❖ SERVER LIMITS AND CONFIGURATIONS - THESE CAN BE SET BASED ON YOUR SERVER CONFIGURATIONS 
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "3000"))
