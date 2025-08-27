@@ -108,47 +108,13 @@ class Helper(object):
 '''
 
 
-import time, psutil
-from NEXIOMUSIC import app
-
-START_TIME = time.time()
-
-BOTS = [
-    "@musicXanime_bot",
-    "@Kitty_musicXbot",
-    "@mommy_xbot",
-]
-
-async def HELP_TOOL():
-    """Return dynamic system stats + bots status"""
-    uptime = time.strftime("%Hh:%Mm:%Ss", time.gmtime(time.time() - START_TIME))
-    cpu = psutil.cpu_percent()
-    ram = psutil.virtual_memory().percent
-
-    blocks = []
-    for bot in BOTS:
-        try:
-            user = await app.get_users(bot)
-            if user:
-                status = "ᴧʟɪᴠє ✅"
-            else:
-                status = "ᴅєᴀᴅ ❌"
-        except Exception:
-            status = "ᴅєᴀᴅ ❌"
-
-        blocks.append(
-            f"╭⎋ {bot} : {status}\n"
-            f"╰⊚ Uptime : {uptime} | CPU : {cpu}% | RAM : {ram}%\n"
-        )
-
-    return f"""
-**─────────────────────────
-│ ˹ 𝐁ᴏᴛs˼ 𝐒ᴛᴀᴛᴜs Pᴀɴᴇʟ │
-─────────────────────────
-{''.join(blocks)}
-─────────────────────────
-⊚ ʟᴧsᴛ ᴄʜєᴄᴋєᴅ : {time.strftime("%d %b %Y %H:%M:%S")}
-─────────────────────────
-❍ 𝐏ᴏᴡєʀєᴅ 𝖡ʏ » Moon 🌙
-─────────────────────────**
-"""
+    HELP_TOOL = '''
+**──────────────────
+│ ✨ ʙᴏᴛ sᴛᴧᴛυs ✨ │
+──────────────────
+⊚ @musicXanime_bot → ᴧʟɪᴠє ✅  
+⊚ @Kitty_musicXbot → ᴧʟɪᴠє ✅  
+⊚ @mommy_xbot → ᴧʟɪᴠє ✅  
+──────────────────
+❍ ᴘᴏᴡєʀєᴅ ʙʏ » @Kittyxupdates 🎶**
+'''
