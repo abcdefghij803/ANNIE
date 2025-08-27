@@ -16,21 +16,14 @@ class BUTTONS(object):
     ]
 
     ZBUTTON = [
-    [
-        InlineKeyboardButton("Kitty", url="https://t.me/+zOo21P9qDW4wZjk1"),
-        InlineKeyboardButton("Annie", url="https://t.me/btw_moon"),
-    ],
-    [
-        InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
-    ],
-]
-
-    STATUS_BUTTON = InlineKeyboardMarkup(
-    [
-        [InlineKeyboardButton("📊 Refresh Status", callback_data="TOOL_REFRESH")],
-        [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="ALLBOT_CP")],
+        [
+            InlineKeyboardButton("Kitty", url="https://t.me/+zOo21P9qDW4wZjk1"),
+            InlineKeyboardButton("Annie", url="https://t.me/btw_moon"),
+        ],
+        [
+            InlineKeyboardButton("⌯ ʙᴧᴄᴋ ᴛσ ʜσϻє ⌯", callback_data="settingsback_helper"),
+        ]
     ]
-)
 
     ABUTTOhN = [
         [
