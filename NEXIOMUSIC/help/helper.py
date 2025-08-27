@@ -112,9 +112,15 @@ import time, psutil
 from NEXIOMUSIC import app
 
 START_TIME = time.time()
-BOTS = ["@musicXanime_bot", "@Kitty_musicXbot", "@mommy_xbot"]
+
+BOTS = [
+    "@musicXanime_bot",
+    "@Kitty_musicXbot",
+    "@mommy_xbot",
+]
 
 async def HELP_TOOL():
+    """Return dynamic system stats + bots status"""
     uptime = time.strftime("%Hh:%Mm:%Ss", time.gmtime(time.time() - START_TIME))
     cpu = psutil.cpu_percent()
     ram = psutil.virtual_memory().percent
@@ -130,16 +136,19 @@ async def HELP_TOOL():
         except Exception:
             status = "ᴅєᴀᴅ ❌"
 
-        blocks.append(f"╭⎋ {bot} : {status}\n╰⊚ Uptime : {uptime} | CPU : {cpu}% | RAM : {ram}%\n")
+        blocks.append(
+            f"╭⎋ {bot} : {status}\n"
+            f"╰⊚ Uptime : {uptime} | CPU : {cpu}% | RAM : {ram}%\n"
+        )
 
     return f"""
 **─────────────────────────
-│ ᴡєʟᴄσϻє ᴛσ ˹ 𝐁ᴏᴛs˼ ʙσᴛ sᴛᴧᴛυs │
+│ ˹ 𝐁ᴏᴛs˼ 𝐒ᴛᴀᴛᴜs Pᴀɴᴇʟ │
 ─────────────────────────
 {''.join(blocks)}
 ─────────────────────────
-⊚ ʟᴧsᴛ ᴄʜєᴄᴋєᴅ ση : {time.strftime("%d %b %Y")}
+⊚ ʟᴧsᴛ ᴄʜєᴄᴋєᴅ : {time.strftime("%d %b %Y %H:%M:%S")}
 ─────────────────────────
-❍ 𝐏ᴏᴡєʀєᴅ 𝖡ʏ »
-─────────────────────────🎄👀**
+❍ 𝐏ᴏᴡєʀєᴅ 𝖡ʏ » Moon 🌙
+─────────────────────────**
 """
