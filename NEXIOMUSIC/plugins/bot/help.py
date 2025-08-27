@@ -492,39 +492,3 @@ async def mb_plugin_button(client, CallbackQuery):
 
 
 
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup
-from NEXIOMUSIC.help.helper import HELP_TOOL
-from NEXIOMUSIC.help.buttons import ABUTTON, ZBUTTON, STATUS_BUTTON
-from NEXIOMUSIC import app
-
-
-# When user clicks "˹ ᴧʟʟ ʙσᴛ's ˼"
-@app.on_callback_query(filters.regex("TOOL_CP"))
-async def tool_cp_handler(client, query):
-    text = await HELP_TOOL()
-    await query.message.edit_text(
-        text,
-        disable_web_page_preview=True,
-        reply_markup=STATUS_BUTTON
-    )
-
-
-# Refresh button
-@app.on_callback_query(filters.regex("TOOL_REFRESH"))
-async def tool_refresh_handler(client, query):
-    text = await HELP_TOOL()
-    await query.message.edit_text(
-        text,
-        disable_web_page_preview=True,
-        reply_markup=STATUS_BUTTON
-    )
-
-
-# Back button (show ABUTTON + ZBUTTON)
-@app.on_callback_query(filters.regex("ALLBOT_CP"))
-async def allbot_cp_handler(client, query):
-    await query.message.edit_text(
-        "🤖 Choose an option:",
-        reply_markup=InlineKeyboardMarkup(ZBUTTON)
-    )
