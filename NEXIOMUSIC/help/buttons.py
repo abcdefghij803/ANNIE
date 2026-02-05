@@ -41,7 +41,7 @@ class BUTTONS(object):
 
     PBUTTON = [
         [
-            InlineKeyboardButton("˹ 🇲σ᭡፝֟ɳ🌙 ˼", url="https://t.me/about_ur_moonshining/5"),
+            InlineKeyboardButton("˹ 🇲σ᭡፝֟ɳ🌙 ˼", url="https://t.me/btw_moon"),
             InlineKeyboardButton("˹ σᴡηєꝛ's ᴄʟᴧη 🎄 ˼", url="https://t.me/Grandxmasti"),
         ],
         [
@@ -100,7 +100,7 @@ class BUTTONS(object):
 
     LBUTTON = [
         [
-            InlineKeyboardButton("˹ sʜʏᴧꝛɪ ˼", url="https://t.me/shayariAlfaazonKaAaina"),
+            InlineKeyboardButton("˹ sʜʏᴧꝛɪ ˼", url="https://t.me/Meowstric"),
             InlineKeyboardButton("˹ sυᴘᴘσʀᴛ ˼", url="https://t.me/grandxmasti"),
         ],
         [
