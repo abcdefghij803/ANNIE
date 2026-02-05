@@ -35,7 +35,7 @@ GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 # ❖ SUPPORT AND CONTACT INFORMATION - PROVIDE YOUR OWN SUPPORT CHANNELS 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/btw_moon")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/kittyxupdates")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Meowstric")
 
 API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
 VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://api.thequickearn.xyz')
