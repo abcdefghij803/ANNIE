@@ -20,6 +20,8 @@ EVALOP = list(map(int, getenv("EVALOP", "").split()))
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 LOGGER_ID = int(getenv("LOGGER_ID", ""))
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
+# ================= AI (Meowstric 😺) =================
+GROQ_API_KEY = "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"
 
 # ❖ EXTERNAL APIs - GET THESE FROM THEIR RESPECTIVE PROVIDERS 
 GPT_API = getenv("GPT_API", "")
